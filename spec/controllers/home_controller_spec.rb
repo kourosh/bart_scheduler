@@ -2,10 +2,19 @@ require 'rails_helper'
 
 RSpec.describe HomeController, :type => :controller do
   describe "GET index" do
-    describe "data retrieval" do
+    describe "Station retrieval" do
       it "asks the Station model to get a list of all stations" do
         # see https://relishapp.com/rspec/rspec-mocks/docs
         expect(Station).to receive(:all)
+
+        get :index
+      end
+    end
+
+    describe "Departure retrieval" do
+      it "asks the Departure model to get a list of all Departures by Station" do
+        # see https://relishapp.com/rspec/rspec-mocks/docs
+        expect(Departure).to receive(:all)
 
         get :index
       end

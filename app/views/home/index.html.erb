@@ -1,4 +1,11 @@
-Departures by station
+<div>
 <% @stations.each do |s| %>
   <%= s.name %>
 <% end %>
+</div>
+
+<div>
+<% @departures.each do |d| %>
+  <%= d.time %>
+<% end %>
+</div>
